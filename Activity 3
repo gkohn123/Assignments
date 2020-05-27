@@ -1,0 +1,37 @@
+def display_title():
+    print("Welcome to the Grade Calculator")
+
+
+def get_totalPoints(points):
+    if points >= 1001:
+        return "You must enter inter values >=0 and <= 1000. Try again"
+    if points >= 920 and points <= 1000:
+        return "A"
+    if points >= 880 and points <= 919.9:
+        return "B+"
+    if points >= 820 and points <= 879.9:
+        return "B"
+    if points >= 780 and points <= 819.9:
+        return "C+"
+    if points >= 700 and points <= 779.9:
+        return "C"
+    if points >= 600 and points <= 699.9:
+        return "D"
+    if points >= 0 and points <= 599.9:
+        return "F"
+    if points < 0:
+        return "You must enter inter values >=0 and <= 1000. Try again"
+
+
+def main():
+    display_title()
+    while True:
+        points = int(input("Enter the total score (0-1000):"))
+        print("Letter Grade: ", get_totalPoints(points))
+        choice = input("Continue (y/n)?: ")
+        if choice == 'n':
+            break
+    print("Goodbye!")
+
+
+main()
